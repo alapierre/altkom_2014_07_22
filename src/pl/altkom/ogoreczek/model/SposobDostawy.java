@@ -12,8 +12,9 @@ package pl.altkom.ogoreczek.model;
  */
 public enum SposobDostawy {
     
-    ODBIOR_OSOBISTY, KURIER, PRZESYLKA_LISTOWA, PACZKA_POCZTOWA, PACZKOMAT
-    
-        
+    ODBIOR_OSOBISTY, 
+    KURIER, 
+    PACZKA_POCZTOWA, 
+    PACZKOMAT           
     
 }
