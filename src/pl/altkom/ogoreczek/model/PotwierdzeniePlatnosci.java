@@ -7,8 +7,17 @@ package pl.altkom.ogoreczek.model;
  */
 
 
-public enum PotwierdzeniePlatnosci {
+public class PotwierdzeniePlatnosci {
     
-    POTWIERDZONO, NIE_POTWIERDZONO
+    private boolean czyOtrzymano;
+
+    public boolean isCzyOtrzymano() {
+        return czyOtrzymano;
+    }
+
+    public void setCzyOtrzymano(boolean czyOtrzymano) {
+        this.czyOtrzymano = czyOtrzymano;
+    }
+    
     
 }
