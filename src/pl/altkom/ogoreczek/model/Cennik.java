@@ -27,7 +27,17 @@ public class Cennik {
     private Date dataOd;
     private Date dataDo;
     
-    //produkt
+    private Produkt produkt;
+
+    public Produkt getProdukt() {
+        return produkt;
+    }
+
+    public void setProdukt(Produkt produkt) {
+        this.produkt = produkt;
+    }
+    
+  
     public Cena getCenaProduktu() {
         return cenaProduktu;
     }
@@ -54,8 +64,10 @@ public class Cennik {
 
     @Override
     public String toString() {
-        return "Cennik{" + "cenaProduktu=" + cenaProduktu + ", dataOd=" + dataOd + ", dataDo=" + dataDo + '}';
+        return "Cennik{" + "cenaProduktu=" + cenaProduktu + ", dataOd=" + dataOd + ", dataDo=" + dataDo + ", produkt=" + produkt + '}';
     }
+
+   
     
     
     

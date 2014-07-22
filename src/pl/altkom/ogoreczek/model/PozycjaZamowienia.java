@@ -23,7 +23,41 @@ package pl.altkom.ogoreczek.model;
 public class PozycjaZamowienia {
     private int ilosc;
     private double waga;
-    //private Cena cena; //cena w momencie zlozenia zamowienia
-    //private Produkt produkt;
+    private Cena cena; //cena w momencie zlozenia zamowienia
+    private Produkt produkt;
+
+    public int getIlosc() {
+        return ilosc;
+    }
+
+    public void setIlosc(int ilosc) {
+        this.ilosc = ilosc;
+    }
+
+    public double getWaga() {
+        return waga;
+    }
+
+    public void setWaga(double waga) {
+        this.waga = waga;
+    }
+
+    public Cena getCena() {
+        return cena;
+    }
+
+    public void setCena(Cena cena) {
+        this.cena = cena;
+    }
+
+    public Produkt getProdukt() {
+        return produkt;
+    }
+
+    public void setProdukt(Produkt produkt) {
+        this.produkt = produkt;
+    }
+    
+    
     
 }
