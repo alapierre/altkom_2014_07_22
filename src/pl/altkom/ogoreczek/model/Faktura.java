@@ -16,10 +16,49 @@
 
 package pl.altkom.ogoreczek.model;
 
+import java.util.Date;
+
 /**
  *
  * @author Agnieszka Znosko agnieszka@znosko.net.pl
  */
 public class Faktura {
+     private double kwotaDoZaplatyNetto;
+    private double kwotaDoZaplatyBrutto;
+    private Date dataWystawienia;
+    
+    //produkty
+    //klient
+    //kwota za wysylke
+    //rodzaj platnosci
+    //zamowienie
+    public double getKwotaDoZaplatyNetto() {
+        return kwotaDoZaplatyNetto;
+    }
+
+    public void setKwotaDoZaplatyNetto(double kwotaDoZaplatyNetto) {
+        this.kwotaDoZaplatyNetto = kwotaDoZaplatyNetto;
+    }
+
+    public double getKwotaDoZaplatyBrutto() {
+        return kwotaDoZaplatyBrutto;
+    }
+
+    public void setKwotaDoZaplatyBrutto(double kwotaDoZaplatyBrutto) {
+        this.kwotaDoZaplatyBrutto = kwotaDoZaplatyBrutto;
+    }
+
+    public Date getDataWystawienia() {
+        return dataWystawienia;
+    }
+
+    public void setDataWystawienia(Date dataWystawienia) {
+        this.dataWystawienia = dataWystawienia;
+    }
+
+    @Override
+    public String toString() {
+        return "Faktura{" + "kwotaDoZaplatyNetto=" + kwotaDoZaplatyNetto + ", kwotaDoZaplatyBrutto=" + kwotaDoZaplatyBrutto + ", dataWystawienia=" + dataWystawienia + '}';
+    }
     
 }
