@@ -16,10 +16,48 @@
 
 package pl.altkom.ogoreczek.model;
 
+import java.util.Date;
+
 /**
  *
  * @author Agnieszka Znosko agnieszka@znosko.net.pl
  */
 public class Cennik {
+     private Cena cenaProduktu;
+    private Date dataOd;
+    private Date dataDo;
+    
+    //produkt
+    public Cena getCenaProduktu() {
+        return cenaProduktu;
+    }
+
+    public void setCenaProduktu(Cena cenaProduktu) {
+        this.cenaProduktu = cenaProduktu;
+    }
+
+    public Date getDataOd() {
+        return dataOd;
+    }
+
+    public void setDataOd(Date dataOd) {
+        this.dataOd = dataOd;
+    }
+
+    public Date getDataDo() {
+        return dataDo;
+    }
+
+    public void setDataDo(Date dataDo) {
+        this.dataDo = dataDo;
+    }
+
+    @Override
+    public String toString() {
+        return "Cennik{" + "cenaProduktu=" + cenaProduktu + ", dataOd=" + dataOd + ", dataDo=" + dataDo + '}';
+    }
+    
+    
+    
     
 }
