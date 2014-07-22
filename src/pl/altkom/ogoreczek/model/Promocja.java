@@ -41,5 +41,12 @@ public class Promocja {
 
     public void setDataKoniec(Date dataKoniec) {
         this.dataKoniec = dataKoniec;
-    }    
+    }
+
+    @Override
+    public String toString() {
+        return "Promocja{" + "dataStart=" + dataStart + ", dataKoniec=" + dataKoniec + '}';
+    }
+    
+    
 }

@@ -174,6 +174,12 @@ public class Zamowienie {
     public void setPlatnosc(Platnosc platnosc) {
         this.platnosc = platnosc;
     }
+
+    @Override
+    public String toString() {
+        return "Zamowienie{" + "dataZlozenia=" + dataZlozenia + ", dataPlanowanejRealizacji=" + dataPlanowanejRealizacji + ", dataRealizacji=" + dataRealizacji + ", stanZamowienia=" + stanZamowienia + ", klient=" + klient + ", klientFirmowy=" + klientFirmowy + ", adresDostawy=" + adresDostawy + ", sumaPozycjiZamowienia=" + sumaPozycjiZamowienia + ", kosztDostawyWysylki=" + kosztDostawyWysylki + ", doZaplaty=" + doZaplaty + ", pozycjeZamowienia=" + pozycjeZamowienia + ", promocje=" + promocje + ", faktura=" + faktura + ", wysylka=" + wysylka + ", dostawa=" + dostawa + ", platnosc=" + platnosc + '}';
+    }
+    
     
     
         

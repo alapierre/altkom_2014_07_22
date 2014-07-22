@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Ula.
+ * Copyright 2014 Adrian Lapierre <adrian@soft-project.pl>.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,29 +14,21 @@
  * limitations under the License.
  */
 
-package pl.altkom.ogoreczek.model;
-
 /**
  *
- * @author Ula
+ * @author Adrian Lapierre <adrian@soft-project.pl>
  */
-public class PromocjaKwotowa extends Promocja {
-    private double kwota;
+public class Matrix {
+    
+    private double[][] tab;
 
-    public double getKwota() {
-        return kwota;
+    public Matrix(int size) {
+        tab = new double[size][size];
     }
-
-    public void setKwota(double kwota) {
-        this.kwota = kwota;
+    
+    public void setElement(int x, int y, double value) {
+        tab[x][y] = value;
     }
-
-    @Override
-    public String toString() {
-        return "PromocjaKwotowa{" + "kwota=" + kwota + '}' + super.toString();
-    }
-
-
     
     
 }

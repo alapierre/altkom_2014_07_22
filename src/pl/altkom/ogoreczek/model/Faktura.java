@@ -32,6 +32,33 @@ public class Faktura {
     private Wysylka wysylka;
     private Platnosc platosc;
     private Zamowienie zamowienie;
+    private Rabat rabat;
+
+    public Wysylka getWysylka() {
+        return wysylka;
+    }
+
+    public void setWysylka(Wysylka wysylka) {
+        this.wysylka = wysylka;
+    }
+
+    public Zamowienie getZamowienie() {
+        return zamowienie;
+    }
+
+    public void setZamowienie(Zamowienie zamowienie) {
+        this.zamowienie = zamowienie;
+    }
+
+    public Rabat getRabat() {
+        return rabat;
+    }
+
+    public void setRabat(Rabat rabat) {
+        this.rabat = rabat;
+    }
+    
+    
 
     public String getNrFaktury() {
         return nrFaktury;
@@ -101,9 +128,10 @@ public class Faktura {
 
     @Override
     public String toString() {
-        return "Faktura{" + "kwotaDoZaplatyNetto=" + kwotaDoZaplatyNetto + ", kwotaDoZaplatyBrutto=" + kwotaDoZaplatyBrutto + ", dataWystawienia=" + dataWystawienia + ", nrFaktury=" + nrFaktury + ", klient=" + klient + ", kosztWysyki=" + wysylka + ", platosc=" + platosc + ", numerPlatnosci=" + zamowienie + '}';
+        return "Faktura{" + "kwotaDoZaplatyNetto=" + kwotaDoZaplatyNetto + ", kwotaDoZaplatyBrutto=" + kwotaDoZaplatyBrutto + ", dataWystawienia=" + dataWystawienia + ", nrFaktury=" + nrFaktury + ", klient=" + klient + ", wysylka=" + wysylka + ", platosc=" + platosc + ", zamowienie=" + zamowienie + ", rabat=" + rabat + '}';
     }
 
+    
     
     
 }
