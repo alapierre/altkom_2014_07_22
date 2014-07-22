@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Adrian Lapierre <adrian@soft-project.pl>.
+ * Copyright 2014 Your Name <Ewa Milewska>.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,29 +14,34 @@
  * limitations under the License.
  */
 
+import org.junit.Test;
+import static org.junit.Assert.*;
+
 /**
  *
- * @author Adrian Lapierre <adrian@soft-project.pl>
+ * @author Your Name <Ewa Milewska>
  */
-public class Matrix {
+public class MatrixTest {
     
-    private double[][] tab;
+    public MatrixTest() {
+    }
 
-    public Matrix(int size) {
-        tab = new double[size][size];
+    @Test
+    public void testSetElement() {
     }
-    
-    public void setElement(int x, int y, double value) {
-        tab[x][y] = value;
-    }
-    
-    public double wyznacznik() {
-        if (tab.length == 0) return 0;
-        double iloczyn = 1;
-        for (int i = 0; i < tab.length; i++) {
-            iloczyn *= tab [i][i];
+
+    @Test
+    public void testWyznacznik() {
+        Matrix matrix = new Matrix(4);
+        
+        for(int i = 0; i < 4; i++) {
+          matrix.setElement(i, i, i+1);
         }
-    return iloczyn;
+        
+        double result = matrix.wyznacznik();
+        System.out.println(matrix.wyznacznik());
+        
+        assert result == 24 : "nieprawidłowa wartość wyznacznika";
     }
+    
 }
-
