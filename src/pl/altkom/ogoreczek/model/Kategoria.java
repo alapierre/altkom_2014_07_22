@@ -23,4 +23,27 @@ package pl.altkom.ogoreczek.model;
 public class Kategoria {
     private String nazwa;
     private Typ typ;
+
+    public String getNazwa() {
+        return nazwa;
+    }
+
+    public void setNazwa(String nazwa) {
+        this.nazwa = nazwa;
+    }
+
+    public Typ getTyp() {
+        return typ;
+    }
+
+    public void setTyp(Typ typ) {
+        this.typ = typ;
+    }
+
+    @Override
+    public String toString() {
+        return "Kategoria{" + "nazwa=" + nazwa + ", typ=" + typ + '}';
+    }
+    
+    
 }
