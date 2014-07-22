@@ -9,14 +9,14 @@ package pl.altkom.ogoreczek.model;
 
 public class PotwierdzeniePlatnosci {
     
-    private boolean czyOtrzymano;
+    private boolean potwierdzono;
 
-    public boolean isCzyOtrzymano() {
-        return czyOtrzymano;
+    public boolean isPotwierdzono() {
+        return potwierdzono;
     }
 
-    public void setCzyOtrzymano(boolean czyOtrzymano) {
-        this.czyOtrzymano = czyOtrzymano;
+    public void setPotwierdzono(boolean potwierdzono) {
+        this.potwierdzono = potwierdzono;
     }
     
     
