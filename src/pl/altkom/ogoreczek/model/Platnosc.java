@@ -25,7 +25,7 @@ import java.util.Date;
 public class Platnosc {
     private Date data;
     private double kwota;
-    private String numerZamowienia;
+    private Zamowienie Zamowienie;
     private Waluta waluta;
     private SposobPlatnosci sposobPlatnosci;
     private boolean czyPrzeterminowana;
@@ -38,8 +38,8 @@ public class Platnosc {
         return kwota;
     }
 
-    public String getNumerZamowienia() {
-        return numerZamowienia;
+    public pl.altkom.ogoreczek.model.Zamowienie getZamowienie() {
+        return Zamowienie;
     }
 
     public Waluta getWaluta() {
@@ -62,8 +62,8 @@ public class Platnosc {
         this.kwota = kwota;
     }
 
-    public void setNumerZamowienia(String numerZamowienia) {
-        this.numerZamowienia = numerZamowienia;
+    public void setZamowienie(Zamowienie Zamowienie) {
+        this.Zamowienie = Zamowienie;
     }
 
     public void setWaluta(Waluta waluta) {

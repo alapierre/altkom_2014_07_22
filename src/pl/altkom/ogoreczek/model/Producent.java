@@ -22,6 +22,7 @@ package pl.altkom.ogoreczek.model;
  */
 public class Producent {
     private String nazwa;
+    private Adres adres;
     private String opinia;
     private int czasDostawy;
     private String terminyDostawy;

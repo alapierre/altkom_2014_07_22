@@ -22,21 +22,22 @@ package pl.altkom.ogoreczek.model;
  */
 public class Produkt {
     private String nazwa;
-    private String kategoria;
+    private Kategoria kategoria;
     private String gatunek;
     private String opis;
-    private String producent;
+    private Producent producent;
     private int iloscWMagazynie;
     private Boolean czyTrwale;
     private JednostkaMiary jM;
     private Opakowanie opakowanie;
     private double iloscWPaczce;
+    private Cena cena;
 
     public String getNazwa() {
         return nazwa;
     }
 
-    public String getKategoria() {
+    public Kategoria getKategoria() {
         return kategoria;
     }
 
@@ -48,7 +49,7 @@ public class Produkt {
         return opis;
     }
 
-    public String getProducent() {
+    public Producent getProducent() {
         return producent;
     }
 
@@ -76,7 +77,7 @@ public class Produkt {
         this.nazwa = nazwa;
     }
 
-    public void setKategoria(String kategoria) {
+    public void setKategoria(Kategoria kategoria) {
         this.kategoria = kategoria;
     }
 
@@ -88,7 +89,7 @@ public class Produkt {
         this.opis = opis;
     }
 
-    public void setProducent(String producent) {
+    public void setProducent(Producent producent) {
         this.producent = producent;
     }
 
@@ -110,6 +111,14 @@ public class Produkt {
 
     public void setIloscWPaczce(double iloscWPaczce) {
         this.iloscWPaczce = iloscWPaczce;
+    }
+
+    public Cena getCena() {
+        return cena;
+    }
+
+    public void setCena(Cena cena) {
+        this.cena = cena;
     }
     
     
