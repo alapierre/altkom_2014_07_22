@@ -8,7 +8,7 @@ package pl.altkom.ogoreczek.model;
 
 /**
  *
- * @author Student
+ * @author weronika
  */
 class Rabat {
     private int cenaZamowienia;
