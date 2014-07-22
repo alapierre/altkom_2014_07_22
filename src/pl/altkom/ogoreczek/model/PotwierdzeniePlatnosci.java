@@ -18,6 +18,11 @@ public class PotwierdzeniePlatnosci {
     public void setPotwierdzono(boolean potwierdzono) {
         this.potwierdzono = potwierdzono;
     }
+
+    @Override
+    public String toString() {
+        return "PotwierdzeniePlatnosci{" + "potwierdzono=" + potwierdzono + '}';
+    }
     
     
 }
