@@ -29,5 +29,54 @@ public class Platnosc {
     private Waluta waluta;
     private SposobPlatnosci sposobPlatnosci;
     private boolean czyPrzeterminowana;
+
+    public Date getData() {
+        return data;
+    }
+
+    public double getKwota() {
+        return kwota;
+    }
+
+    public String getNumerZamowienia() {
+        return numerZamowienia;
+    }
+
+    public Waluta getWaluta() {
+        return waluta;
+    }
+
+    public SposobPlatnosci getSposobPlatnosci() {
+        return sposobPlatnosci;
+    }
+
+    public boolean isCzyPrzeterminowana() {
+        return czyPrzeterminowana;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    public void setKwota(double kwota) {
+        this.kwota = kwota;
+    }
+
+    public void setNumerZamowienia(String numerZamowienia) {
+        this.numerZamowienia = numerZamowienia;
+    }
+
+    public void setWaluta(Waluta waluta) {
+        this.waluta = waluta;
+    }
+
+    public void setSposobPlatnosci(SposobPlatnosci sposobPlatnosci) {
+        this.sposobPlatnosci = sposobPlatnosci;
+    }
+
+    public void setCzyPrzeterminowana(boolean czyPrzeterminowana) {
+        this.czyPrzeterminowana = czyPrzeterminowana;
+    }
+    
     
 }
