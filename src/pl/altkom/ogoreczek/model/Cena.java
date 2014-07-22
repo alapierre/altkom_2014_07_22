@@ -21,5 +21,37 @@ package pl.altkom.ogoreczek.model;
  * @author Agnieszka Znosko agnieszka@znosko.net.pl
  */
 public class Cena {
+     private double cenaNetto;
+    private double vatWartosc;
+    private String waluta;
+
+    public double getCenaNetto() {
+        return cenaNetto;
+    }
+
+    public void setCenaNetto(double cenaNetto) {
+        this.cenaNetto = cenaNetto;
+    }
+
+    public double getVatWartosc() {
+        return vatWartosc;
+    }
+
+    public void setVatWartosc(double vatWartosc) {
+        this.vatWartosc = vatWartosc;
+    }
+
+    public String getWaluta() {
+        return waluta;
+    }
+
+    public void setWaluta(String waluta) {
+        this.waluta = waluta;
+    }
+
+    @Override
+    public String toString() {
+        return "Cena{" + "cenaNetto=" + cenaNetto + ", vatWartosc=" + vatWartosc + ", waluta=" + waluta + '}';
+    }
     
 }
