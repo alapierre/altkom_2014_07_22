@@ -24,13 +24,14 @@ import java.util.List;
  * @author Ula
  */
 public class Zamowienie {
-private Date dataZlozenia;
+    private Date dataZlozenia;
     private Date dataPlanowanejRealizacji;
     private Date dataRealizacji;
     
     private StanZamowienia stanZamowienia;
-    //private Klient klient
-    //private Adres adresDostawy
+    private Klient klient;
+    private KlientFirmowy klientFirmowy;
+    private Adres adresDostawy;
     
     private double sumaPozycjiZamowienia;//suma cen produktow
     private double kosztDostawyWysylki;
@@ -40,11 +41,12 @@ private Date dataZlozenia;
     private List<Promocja> promocje;
     
     //private TypPotwierdzenia typPotwierdzenia; //paragon/faktura
-    //private Faktura faktura;
+    private Faktura faktura;
     //private TypDostarczenia typDostarczenia; //wysylka/odbior/dostawa
-    //private Wysylka wysylka;
-    //private Dostawa dostawa;
-    //private Platnosc platnosc;
+    private Wysylka wysylka;
+    private Dostawa dostawa;
+    private Platnosc platnosc;
+    
     public Date getDataZlozenia() {
         return dataZlozenia;
     }
@@ -116,6 +118,63 @@ private Date dataZlozenia;
     public void setPromocje(List<Promocja> promocje) {
         this.promocje = promocje;
     }
+
+    public Klient getKlient() {
+        return klient;
+    }
+
+    public void setKlient(Klient klient) {
+        this.klient = klient;
+    }
+
+    public KlientFirmowy getKlientFirmowy() {
+        return klientFirmowy;
+    }
+
+    public void setKlientFirmowy(KlientFirmowy klientFirmowy) {
+        this.klientFirmowy = klientFirmowy;
+    }
+
+    public Adres getAdresDostawy() {
+        return adresDostawy;
+    }
+
+    public void setAdresDostawy(Adres adresDostawy) {
+        this.adresDostawy = adresDostawy;
+    }
+
+    public Faktura getFaktura() {
+        return faktura;
+    }
+
+    public void setFaktura(Faktura faktura) {
+        this.faktura = faktura;
+    }
+
+    public Wysylka getWysylka() {
+        return wysylka;
+    }
+
+    public void setWysylka(Wysylka wysylka) {
+        this.wysylka = wysylka;
+    }
+
+    public Dostawa getDostawa() {
+        return dostawa;
+    }
+
+    public void setDostawa(Dostawa dostawa) {
+        this.dostawa = dostawa;
+    }
+
+    public Platnosc getPlatnosc() {
+        return platnosc;
+    }
+
+    public void setPlatnosc(Platnosc platnosc) {
+        this.platnosc = platnosc;
+    }
+    
     
         
 }
