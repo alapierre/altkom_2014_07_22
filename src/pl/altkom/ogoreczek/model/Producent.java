@@ -25,4 +25,29 @@ public class Producent {
     private String opinia;
     private int czasDostawy;
     private String terminyDostawy;
+
+    public String getNazwa() {
+        return nazwa;
+    }
+
+    public String getOpinia() {
+        return opinia;
+    }
+
+    public int getCzasDostawy() {
+        return czasDostawy;
+    }
+
+    public String getTerminyDostawy() {
+        return terminyDostawy;
+    }
+
+    public void setNazwa(String nazwa) {
+        this.nazwa = nazwa;
+    }
+
+    public void setCzasDostawy(int czasDostawy) {
+        this.czasDostawy = czasDostawy;
+    }
+    
 }
