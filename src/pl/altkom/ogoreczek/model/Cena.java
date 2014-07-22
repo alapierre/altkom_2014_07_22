@@ -23,7 +23,7 @@ package pl.altkom.ogoreczek.model;
 public class Cena {
      private double cenaNetto;
     private double vatWartosc;
-    private String waluta;
+    private Waluta waluta;
 
     public double getCenaNetto() {
         return cenaNetto;
@@ -41,13 +41,15 @@ public class Cena {
         this.vatWartosc = vatWartosc;
     }
 
-    public String getWaluta() {
+    public Waluta getWaluta() {
         return waluta;
     }
 
-    public void setWaluta(String waluta) {
+    public void setWaluta(Waluta waluta) {
         this.waluta = waluta;
     }
+
+   
 
     @Override
     public String toString() {

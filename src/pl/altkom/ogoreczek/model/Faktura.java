@@ -26,12 +26,55 @@ public class Faktura {
      private double kwotaDoZaplatyNetto;
     private double kwotaDoZaplatyBrutto;
     private Date dataWystawienia;
+    private String nrFaktury;
     
+    private Klient klient;
+    private Wysylka wysylka;
+    private Platnosc platosc;
+    private Zamowienie zamowienie;
+
+    public String getNrFaktury() {
+        return nrFaktury;
+    }
+
+    public void setNrFaktury(String nrFaktury) {
+        this.nrFaktury = nrFaktury;
+    }
+
+    public Klient getKlient() {
+        return klient;
+    }
+
+    public void setKlient(Klient klient) {
+        this.klient = klient;
+    }
+
+    public Wysylka getKosztWysyki() {
+        return wysylka;
+    }
+
+    public void setKosztWysyki(Wysylka kosztWysyki) {
+        this.wysylka = kosztWysyki;
+    }
+
+    public Platnosc getPlatosc() {
+        return platosc;
+    }
+
+    public void setPlatosc(Platnosc platosc) {
+        this.platosc = platosc;
+    }
+
+    public Zamowienie getNumerPlatnosci() {
+        return zamowienie;
+    }
+
+    public void setNumerPlatnosci(Zamowienie numerPlatnosci) {
+        this.zamowienie = numerPlatnosci;
+    }
+    
+   
     //produkty
-    //klient
-    //kwota za wysylke
-    //rodzaj platnosci
-    //zamowienie
     public double getKwotaDoZaplatyNetto() {
         return kwotaDoZaplatyNetto;
     }
@@ -58,7 +101,9 @@ public class Faktura {
 
     @Override
     public String toString() {
-        return "Faktura{" + "kwotaDoZaplatyNetto=" + kwotaDoZaplatyNetto + ", kwotaDoZaplatyBrutto=" + kwotaDoZaplatyBrutto + ", dataWystawienia=" + dataWystawienia + '}';
+        return "Faktura{" + "kwotaDoZaplatyNetto=" + kwotaDoZaplatyNetto + ", kwotaDoZaplatyBrutto=" + kwotaDoZaplatyBrutto + ", dataWystawienia=" + dataWystawienia + ", nrFaktury=" + nrFaktury + ", klient=" + klient + ", kosztWysyki=" + wysylka + ", platosc=" + platosc + ", numerPlatnosci=" + zamowienie + '}';
     }
+
+    
     
 }

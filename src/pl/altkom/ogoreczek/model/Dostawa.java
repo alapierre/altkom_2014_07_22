@@ -13,7 +13,7 @@ public class Dostawa {
     private SposobDostawy sposobDostawy;
     private double kosztDostawy;
     private String adresWysyłki;
-    private Date czasDostawy;
+    private Date dataDostawy;
 
     public SposobDostawy getSposobDostawy() {
         return sposobDostawy;
@@ -39,17 +39,17 @@ public class Dostawa {
         this.adresWysyłki = adresWysyłki;
     }
 
-    public Date getCzasDostawy() {
-        return czasDostawy;
+    public Date getDataDostawy() {
+        return dataDostawy;
     }
 
-    public void setCzasDostawy(Date czasDostawy) {
-        this.czasDostawy = czasDostawy;
+    public void setDataDostawy(Date dataDostawy) {
+        this.dataDostawy = dataDostawy;
     }
 
     @Override
     public String toString() {
-        return "Dostawa{" + "sposobDostawy=" + sposobDostawy + ", kosztDostawy=" + kosztDostawy + ", adresWysy\u0142ki=" + adresWysyłki + ", czasDostawy=" + czasDostawy + '}';
+        return "Dostawa{" + "sposobDostawy=" + sposobDostawy + ", kosztDostawy=" + kosztDostawy + ", adresWysy\u0142ki=" + adresWysyłki + ", dataDostawy=" + dataDostawy + '}';
     }
     
     
