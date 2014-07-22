@@ -30,5 +30,13 @@ public class PromocjaKwotowa extends Promocja {
     public void setKwota(double kwota) {
         this.kwota = kwota;
     }
+
+    @Override
+    public String toString() {
+        return "PromocjaKwotowa{" + "kwota=" + kwota + '}' + super.toString();
+    }
+
+
+    
     
 }

@@ -30,5 +30,12 @@ public class PromocjaProcentowa extends Promocja {
     public void setProcent(double procent) {
         this.procent = procent;
     }
+
+    @Override
+    public String toString() {
+        return "PromocjaProcentowa{" + "procent=" + procent + '}';
+    }
+    
+    
     
 }
