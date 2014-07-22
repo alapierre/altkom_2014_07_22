@@ -13,27 +13,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package pl.altkom.ogoreczek.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
  * @author Agnieszka Znosko agnieszka@znosko.net.pl
  */
 public class Faktura {
-     private double kwotaDoZaplatyNetto;
+
+    private double kwotaDoZaplatyNetto;
     private double kwotaDoZaplatyBrutto;
     private Date dataWystawienia;
     private String nrFaktury;
-    
+
     private Klient klient;
     private Wysylka wysylka;
     private Platnosc platosc;
     private Zamowienie zamowienie;
     private Rabat rabat;
 
+    private List pozycjeFaktury = new ArrayList();;
+    
+    public void dodajPozycje(PozycjaFaktury nowaPozycjaFaktury) {
+        pozycjeFaktury.add(nowaPozycjaFaktury);
+    }
+
+    public int getIloscPozycjiFaktury() {
+        return pozycjeFaktury.size();
+    }
+    
     public Wysylka getWysylka() {
         return wysylka;
     }
@@ -57,8 +69,6 @@ public class Faktura {
     public void setRabat(Rabat rabat) {
         this.rabat = rabat;
     }
-    
-    
 
     public String getNrFaktury() {
         return nrFaktury;
@@ -99,8 +109,7 @@ public class Faktura {
     public void setNumerPlatnosci(Zamowienie numerPlatnosci) {
         this.zamowienie = numerPlatnosci;
     }
-    
-   
+
     //produkty
     public double getKwotaDoZaplatyNetto() {
         return kwotaDoZaplatyNetto;
@@ -131,7 +140,4 @@ public class Faktura {
         return "Faktura{" + "kwotaDoZaplatyNetto=" + kwotaDoZaplatyNetto + ", kwotaDoZaplatyBrutto=" + kwotaDoZaplatyBrutto + ", dataWystawienia=" + dataWystawienia + ", nrFaktury=" + nrFaktury + ", klient=" + klient + ", wysylka=" + wysylka + ", platosc=" + platosc + ", zamowienie=" + zamowienie + ", rabat=" + rabat + '}';
     }
 
-    
-    
-    
 }

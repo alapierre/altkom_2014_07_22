@@ -21,7 +21,29 @@ package pl.altkom.ogoreczek.model;
  * @author Agnieszka Znosko agnieszka@znosko.net.pl
  */
 public class Cena {
-     private double cenaNetto;
+
+    public Cena(double cenaNetto) {
+        this.cenaNetto = cenaNetto;
+        waluta = Waluta.PLN;
+        vatWartosc = 0.23 * cenaNetto;
+    }
+
+    public Cena(double cenaNetto, double vatWartosc) {
+        this.cenaNetto = cenaNetto;
+        this.vatWartosc = vatWartosc;
+        waluta = Waluta.PLN;
+    }
+
+    public Cena() {
+    }
+
+    public Cena(double cenaNetto, double vatWartosc, Waluta waluta) {
+        this.cenaNetto = cenaNetto;
+        this.vatWartosc = vatWartosc;
+        this.waluta = waluta;
+    }
+    
+    private double cenaNetto;
     private double vatWartosc;
     private Waluta waluta;
 
