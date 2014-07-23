@@ -37,6 +37,7 @@ public class Matrix {
             iloczyn *= tab [i][i];
         }
     return iloczyn;
+    
     }
 }
 
