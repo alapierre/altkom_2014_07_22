@@ -16,9 +16,12 @@
 
 package pl.altkom.ogoreczek;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -36,6 +39,30 @@ import pl.altkom.ogoreczek.model.KlientIndywidualny;
  */
 public class Ogoreczek {
     
+    public static List<Klient> load() {
+        
+        File file = new File("klinci.bin");
+        
+        if(file.exists()) {
+            
+            try {
+                ObjectInputStream ooi = new ObjectInputStream(new FileInputStream(file));
+                return (List<Klient>) ooi.readObject();
+            } catch (IOException ex) {
+                System.out.println("problem z odczytem");
+                return new ArrayList<Klient>();
+            } catch (ClassNotFoundException ex) {
+                System.out.println("brak definicji klasy " + ex.getMessage());
+                return new ArrayList<Klient>();
+            }
+            
+        } else {
+            System.out.println("brak pliku z danymi");
+            return new ArrayList<Klient>();
+        }
+        
+    }
+    
     public static void save(List<Klient> klienci) throws IOException {
         
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("klinci.bin"));
@@ -45,7 +72,7 @@ public class Ogoreczek {
     
     public static void main(String[] args) {
         
-        List<Klient> klienci = new ArrayList<Klient>();
+        List<Klient> klienci = load();
         
         Scanner sc = new Scanner(System.in);
         
