@@ -28,4 +28,9 @@ public class Parent {
         System.out.println("m1 w parent");
     }
     
+    public int m3(String... str) {
+        System.out.println("String... str");
+        return 0;
+    }
+    
 }

@@ -22,8 +22,11 @@ public class Test {
     
     public static void main(String[] args) {
         
-        Child c = new Child();
-        c.m2();
+        Parent c = new Child();
+        c.m1();
+     
+        
+        
         
     }
 }

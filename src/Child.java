@@ -24,9 +24,20 @@ public class Child extends Parent {
         super(1);
         System.out.println("konstuktor child");
     }
+
+    @Override
+    public void m1() {
+        System.out.println("in child");
+    }
+    
+    
     
     public void m2() {
         System.out.println("m2 w Child");
+    }
+    
+    public void m3(String str) {
+        System.out.println("String str");
     }
     
 }
