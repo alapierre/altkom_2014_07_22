@@ -5,13 +5,14 @@
  */
 package pl.altkom.ogoreczek.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author Student
  */
-public abstract class Klient {
+public abstract class Klient implements Serializable {
 
     private String login;
     private String haslo;

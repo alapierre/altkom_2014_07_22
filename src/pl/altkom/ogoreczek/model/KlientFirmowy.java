@@ -5,13 +5,14 @@
  */
 package pl.altkom.ogoreczek.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author weronika
  */
-public class KlientFirmowy extends Klient {
+public class KlientFirmowy extends Klient  {
 
     private String nazwa;
     private String nip;

@@ -16,6 +16,10 @@
 
 package pl.altkom.ogoreczek;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -32,7 +36,16 @@ import pl.altkom.ogoreczek.model.KlientIndywidualny;
  */
 public class Ogoreczek {
     
+    public static void save(List<Klient> klienci) throws IOException {
+        
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("klinci.bin"));
+        oos.writeObject(klienci);
+        oos.close();
+    }
+    
     public static void main(String[] args) {
+        
+        List<Klient> klienci = new ArrayList<Klient>();
         
         Scanner sc = new Scanner(System.in);
         
@@ -42,9 +55,23 @@ public class Ogoreczek {
             System.out.println("wybrałeś: " + i);
             
             switch (i) {
+                case 1:
+                    for(Klient klient : klienci) {
+                        System.out.println(klient);
+                    }
+                    break;
                 case 2:
                     Klient klient = wczytajDaneKlientaZKlawiatury(sc);
-                    System.out.println(klient);        
+                    System.out.println(klient); 
+                    klienci.add(klient);
+                    
+                            
+                    try {
+                        save(klienci);
+                    } catch (IOException ex) {
+                        System.out.println("błąd zapisu pliku " + ex.getMessage());
+                        ex.printStackTrace();
+                    }
                     break;
                 case 0:
                     return;
