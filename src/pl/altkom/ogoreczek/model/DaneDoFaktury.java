@@ -58,5 +58,10 @@ public class DaneDoFaktury {
     public void setNazwa(String nazwa) {
         this.nazwa = nazwa;
     }
+
+    @Override
+    public String toString() {
+        return "DaneDoFaktury{" + "adres=" + adres + ", identyfikatorPodatkowy=" + identyfikatorPodatkowy + ", nazwa=" + nazwa + '}';
+    }
     
 }

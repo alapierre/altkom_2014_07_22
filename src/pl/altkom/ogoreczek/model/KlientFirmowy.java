@@ -13,20 +13,22 @@ import java.util.Date;
  */
 public class KlientFirmowy extends Klient {
 
-    private String Nazwa;
+    private String nazwa;
     private String nip;
     private Date dataRejestracjiFirmy;
 
+    
+    
     public KlientFirmowy(String login, String haslo, String eMail, String status, Date dataUtworzenia) {
         super(login, haslo, eMail, status, dataUtworzenia);
     }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String Nazwa) {
-        this.Nazwa = Nazwa;
+        this.nazwa = Nazwa;
     }
 
     public String getNIP() {
@@ -47,7 +49,12 @@ public class KlientFirmowy extends Klient {
 
     @Override
     public String toString() {
-        return "KlientFirmowy{" + "Nazwa=" + Nazwa + ", NIP=" + nip + ", dataRejestracjiFirmy=" + dataRejestracjiFirmy + '}';
+        return "KlientFirmowy{" + "Nazwa=" + nazwa + ", NIP=" + nip + ", dataRejestracjiFirmy=" + dataRejestracjiFirmy + '}';
+    }
+
+    @Override
+    public DaneDoFaktury podajDaneDoFaktury() {
+        return new DaneDoFaktury(getAdres(), nip, nazwa);
     }
 
 }

@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author Student
  */
-public class Klient {
+public abstract class Klient {
 
     private String login;
     private String haslo;
@@ -22,6 +22,8 @@ public class Klient {
     private Adres adres;
     private Rabat rabat;
 
+    public abstract DaneDoFaktury podajDaneDoFaktury();
+    
     public String getLogin() {
         return login;
     }

@@ -26,7 +26,7 @@ public class KlientIndywidualny extends Klient{
     private String imie;
     private String nazwisko;
     private String dataUrodzenia;
-    private int pesel;
+    private String pesel;
 
     public KlientIndywidualny(String login, String haslo, String eMail, String statusKlienta, Date dataUtworzenia) {
         super(login, haslo, eMail, statusKlienta, dataUtworzenia);
@@ -56,11 +56,11 @@ public class KlientIndywidualny extends Klient{
         this.dataUrodzenia = dataUrodzenia;
     }
 
-    public int getPesel() {
+    public String getPesel() {
         return pesel;
     }
 
-    public void setPesel(int pesel) {
+    public void setPesel(String pesel) {
         this.pesel = pesel;
     }
 
@@ -69,4 +69,9 @@ public class KlientIndywidualny extends Klient{
         return "KlientIndywidualny{" + "imie=" + imie + ", nazwisko=" + nazwisko + ", dataUrodzenia=" + dataUrodzenia + ", pesel=" + pesel + '}';
     }
 
+    @Override
+    public DaneDoFaktury podajDaneDoFaktury() {
+        return new DaneDoFaktury(getAdres(), pesel, imie + " " + nazwisko);
+    }
+    
 }
