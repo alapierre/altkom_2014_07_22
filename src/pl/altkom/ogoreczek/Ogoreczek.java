@@ -14,11 +14,15 @@
  * limitations under the License.
  */
 
-package pl.altkom.ogoreczek.model;
+package pl.altkom.ogoreczek;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
+import pl.altkom.ogoreczek.model.Klient;
+import pl.altkom.ogoreczek.model.KlientFirmowy;
+import pl.altkom.ogoreczek.model.KlientIndywidualny;
 
 /**
  *
@@ -28,30 +32,30 @@ public class Ogoreczek {
     
     public static void main(String[] args) {
         
-        KlientFirmowy klient 
-                = new KlientFirmowy("login", "haslo", "mail;", "nowy", new Date());
-        klient.setNazwa("jakaś nazwa");
-        klient.setNIP("123-123-11-11");
+        pokazMenu();
         
+        Scanner sc = new Scanner(System.in);
+        int i = czytajLiczbeZKlawiatury(sc);
         
-        List<Klient> klienci = new ArrayList<Klient>();
+        System.out.println("wybrałeś: " + i);
+    }
+    
+    public static void pokazMenu() {
         
-        klienci.add(klient);
+        System.out.println("1. Lista klientów");
+        System.out.println("2. Dodaj kliena");
+        System.out.println("3. Lista zamówień");
+        System.out.println("4. Dodaj zamówienie");
         
-        KlientIndywidualny klient2 
-                = new KlientIndywidualny("drugi", "sekret", "mail", "nowy", new Date());
+    }
+    
+    public static int czytajLiczbeZKlawiatury(Scanner sc) {
         
-        klient2.setImie("Jan");
-        klient2.setNazwisko("Kowalski");
-        klient2.setPesel("12231231232");
+        while(!sc.hasNextInt()) {
+            System.out.println("błędny wybór " + sc.next());
+        } 
         
-        klienci.add(klient2);
-       
-        for(Klient k : klienci) {
-             System.out.println(k.podajDaneDoFaktury());
-        }
-       
-                
+        return sc.nextInt();
     }
     
 }
