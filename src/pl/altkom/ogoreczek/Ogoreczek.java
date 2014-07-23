@@ -76,15 +76,7 @@ public class Ogoreczek {
     
     public static KlientFirmowy wczytajKlientaFirmowego(Scanner sc) {
         
-        System.out.println("login: ");
-        String login = sc.next();
-        
-        System.out.println("Haslo: ");
-        String haslo = sc.next();
-        System.out.println("Mail: ");
-        String email = sc.next();
-        
-        KlientFirmowy klient = new KlientFirmowy(login, haslo, email, "nowy", new Date());
+        KlientFirmowy klient = (KlientFirmowy) przygotujKlienta(sc, true);
         
         System.out.println("Nazwa: ");
         klient.setNazwa(sc.next());
@@ -101,6 +93,24 @@ public class Ogoreczek {
         }
         return klient;
     }
+
+    private static Klient przygotujKlienta(Scanner sc, boolean firmowy) {
+        System.out.println("login: ");
+        String login = sc.next();
+        System.out.println("Haslo: ");
+        String haslo = sc.next();
+        System.out.println("Mail: ");
+        String email = sc.next();
+        
+        Klient klient;
+        
+        if(firmowy) {
+            klient = new KlientFirmowy(login, haslo, email, "nowy", new Date());
+        } else {
+            klient = new KlientIndywidualny(login, haslo, email, "nowy", new Date());
+        }
+        return klient;
+    }
     
     public static Date konwertujDate(String str) throws ParseException {
         
@@ -111,7 +121,17 @@ public class Ogoreczek {
     
     public static KlientIndywidualny wczytajKlientaIndywidualnego(Scanner sc) {
         
-        KlientIndywidualny klient = new KlientIndywidualny(null, null, null, null, null);
+        KlientIndywidualny klient =   (KlientIndywidualny) przygotujKlienta(sc, false);
+        
+        System.out.println("Imię: ");
+        klient.setImie(sc.next());
+        
+        System.out.println("Nazwisko: ");
+        klient.setImie(sc.next());
+        
+        System.out.println("Pesel: ");
+        klient.setImie(sc.next());
+        
         return klient;
         
     }
