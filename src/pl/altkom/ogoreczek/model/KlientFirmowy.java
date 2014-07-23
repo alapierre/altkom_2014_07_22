@@ -3,19 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package pl.altkom.ogoreczek.model;
+
+import java.util.Date;
 
 /**
  *
  * @author weronika
  */
-public class KlientFirmowy {
+public class KlientFirmowy extends Klient {
+
     private String Nazwa;
-    private String NIP;
-    private Rabat rabat;
-    private Faktura faktura;
-    private Adres adres;
+    private String nip;
+    private Date dataRejestracjiFirmy;
+
+    public KlientFirmowy(String login, String haslo, String eMail, String status, Date dataUtworzenia) {
+        super(login, haslo, eMail, status, dataUtworzenia);
+    }
 
     public String getNazwa() {
         return Nazwa;
@@ -26,42 +30,24 @@ public class KlientFirmowy {
     }
 
     public String getNIP() {
-        return NIP;
+        return nip;
     }
 
     public void setNIP(String NIP) {
-        this.NIP = NIP;
+        this.nip = NIP;
     }
 
-    public Rabat getRabat() {
-        return rabat;
+    public Date getDataRejestracjiFirmy() {
+        return dataRejestracjiFirmy;
     }
 
-    public void setRabat(Rabat rabat) {
-        this.rabat = rabat;
-    }
-
-    public Faktura getFaktura() {
-        return faktura;
-    }
-
-    public void setFaktura(Faktura faktura) {
-        this.faktura = faktura;
-    }
-
-    public Adres getAdres() {
-        return adres;
-    }
-
-    public void setAdres(Adres adres) {
-        this.adres = adres;
+    public void setDataRejestracjiFirmy(Date dataRejestracjiFirmy) {
+        this.dataRejestracjiFirmy = dataRejestracjiFirmy;
     }
 
     @Override
     public String toString() {
-        return "KlientFirmowy{" + "Nazwa=" + Nazwa + ", NIP=" + NIP + ", rabat=" + rabat + ", faktura=" + faktura + ", adres=" + adres + '}';
+        return "KlientFirmowy{" + "Nazwa=" + Nazwa + ", NIP=" + nip + ", dataRejestracjiFirmy=" + dataRejestracjiFirmy + '}';
     }
-    
-    
-    
+
 }
