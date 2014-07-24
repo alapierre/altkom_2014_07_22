@@ -18,7 +18,6 @@ package pl.altkom.ogoreczek;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -29,6 +28,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import pl.altkom.ogoreczek.model.Klient;
 import pl.altkom.ogoreczek.model.KlientFirmowy;
 import pl.altkom.ogoreczek.model.KlientIndywidualny;
@@ -39,6 +41,21 @@ import pl.altkom.ogoreczek.model.KlientIndywidualny;
  */
 public class Ogoreczek {
     
+    private static final Logger LOG = Logger.getLogger(Ogoreczek.class.getName());
+    
+    static {
+        FileHandler fh;
+        try {
+            fh = new FileHandler("log.txt");
+            LOG.addHandler(fh);
+        } catch (IOException ex) {
+            Logger.getLogger(Ogoreczek.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SecurityException ex) {
+            Logger.getLogger(Ogoreczek.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
     public static List<Klient> load() {
         
         File file = new File("klinci.bin");
@@ -48,11 +65,11 @@ public class Ogoreczek {
                 
                 return (List<Klient>) ooi.readObject();
             } catch (IOException | ClassNotFoundException  ex) {
-                System.out.println("problem z odczytem " + ex.getMessage());
+                LOG.log(Level.WARNING, "problem z odczytem " + ex.getMessage(), ex);
                 return new ArrayList<Klient>();
             } 
         } else {
-            System.out.println("brak pliku z danymi");
+            LOG.log(Level.INFO, "brak pliku z danymi");
             return new ArrayList<Klient>();
         }
         
@@ -66,6 +83,8 @@ public class Ogoreczek {
     }
     
     public static void main(String[] args) {
+        
+        LOG.log(Level.FINE, "start aplikacji");
         
         List<Klient> klienci = load();
         
@@ -91,17 +110,19 @@ public class Ogoreczek {
                     try {
                         save(klienci);
                     } catch (IOException ex) {
-                        System.out.println("błąd zapisu pliku " + ex.getMessage());
+                        LOG.log(Level.WARNING, "błąd zapisu pliku " + ex.getMessage());
                         ex.printStackTrace();
                     }
                     break;
                 case 0:
+                    LOG.log(Level.INFO, "stop aplikacji");
                     return;
-                    
             }
             
         }
+        
     }
+    
     
     public static Klient wczytajDaneKlientaZKlawiatury(Scanner sc) {
         
