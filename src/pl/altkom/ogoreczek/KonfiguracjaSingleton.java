@@ -16,13 +16,22 @@
 
 package pl.altkom.ogoreczek;
 
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Properties;
+
 /**
  *
  * @author Adrian Lapierre <adrian@soft-project.pl>
  */
 public class KonfiguracjaSingleton {
 
+    private static final String KONFIGURACJAPROPERTIES = "konfiguracja.properties";
+    
     private static KonfiguracjaSingleton instancja = null;
+    
+    private Properties props = new Properties();
     
     private KonfiguracjaSingleton() {
     }
@@ -36,10 +45,20 @@ public class KonfiguracjaSingleton {
     }
     
     private void init() {
-        // czytaj z pliku konfigurację
+        props.setProperty("plik_z_danymi_klientów", "klienci.bin");
+        props.setProperty("plik_z_danymi_klientów", "klienci.bin");
     }
     
     public String getProperty(String key) {
-        return ""; // doimplementować
+        return props.getProperty(key);
+    }
+    
+    public void save() throws IOException {
+        props.store(new FileWriter(KONFIGURACJAPROPERTIES), null);
+    }
+    
+    
+    public void load() throws IOException {
+        props.load(new FileReader(KONFIGURACJAPROPERTIES));
     }
 }

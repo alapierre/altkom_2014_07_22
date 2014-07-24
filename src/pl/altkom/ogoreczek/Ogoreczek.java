@@ -58,7 +58,9 @@ public class Ogoreczek {
     
     public static List<Klient> load() {
         
-        File file = new File("klinci.bin");
+        String fileName = KonfiguracjaSingleton.getInstance().getProperty("plik_z_danymi_klientów");
+        
+        File file = new File(fileName);
         
         if(file.exists()) {
             try (ObjectInputStream ooi = new ObjectInputStream(new FileInputStream(file))) {
@@ -77,7 +79,9 @@ public class Ogoreczek {
     
     public static void save(List<Klient> klienci) throws IOException {
         
-        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("klinci.bin"));
+        String fileName = KonfiguracjaSingleton.getInstance().getProperty("plik_z_danymi_klientów");
+        
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName));
         oos.writeObject(klienci);
         oos.close();
     }
