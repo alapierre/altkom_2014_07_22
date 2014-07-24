@@ -44,18 +44,13 @@ public class Ogoreczek {
         File file = new File("klinci.bin");
         
         if(file.exists()) {
-            
-            try {
-                ObjectInputStream ooi = new ObjectInputStream(new FileInputStream(file));
+            try (ObjectInputStream ooi = new ObjectInputStream(new FileInputStream(file))) {
+                
                 return (List<Klient>) ooi.readObject();
-            } catch (IOException ex) {
-                System.out.println("problem z odczytem");
+            } catch (IOException | ClassNotFoundException  ex) {
+                System.out.println("problem z odczytem " + ex.getMessage());
                 return new ArrayList<Klient>();
-            } catch (ClassNotFoundException ex) {
-                System.out.println("brak definicji klasy " + ex.getMessage());
-                return new ArrayList<Klient>();
-            }
-            
+            } 
         } else {
             System.out.println("brak pliku z danymi");
             return new ArrayList<Klient>();
