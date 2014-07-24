@@ -156,7 +156,7 @@ public class Ogoreczek {
         klient.setNazwa(sc.next());
         
         System.out.println("NIP: ");
-        klient.setNIP(sc.next());
+        klient.setNip(sc.next());
         
         System.out.println("DFata powstania firmy: ");
         

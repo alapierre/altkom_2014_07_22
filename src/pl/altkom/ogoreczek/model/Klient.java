@@ -24,6 +24,9 @@ public abstract class Klient implements Serializable {
     private Rabat rabat;
 
     public abstract DaneDoFaktury podajDaneDoFaktury();
+
+    public Klient() {
+    }
     
     public String getLogin() {
         return login;
