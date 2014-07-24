@@ -16,12 +16,23 @@
 
 package pl.altkom.ogoreczek;
 
+import org.jdesktop.observablecollections.ObservableList;
+import pl.altkom.ogoreczek.model.KlientFirmowy;
+
 /**
  *
  * @author Adrian Lapierre <adrian@soft-project.pl>
  */
 public class AddKlientForm extends javax.swing.JFrame {
 
+    private ObservableList<KlientFirmowy> klienci;
+
+    public void setKlienci(ObservableList<KlientFirmowy> klienci) {
+        this.klienci = klienci;
+    }
+    
+    
+    
     /**
      * Creates new form AddKlientForm
      */
@@ -222,6 +233,10 @@ public class AddKlientForm extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.out.println(klientFirmowy1);
+        
+        klienci.add(klientFirmowy1);
+        dispose();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     
